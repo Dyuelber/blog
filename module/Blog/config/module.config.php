@@ -9,16 +9,16 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 return [
     'router' => [
         'routes' => [
-            'home' => [
+            'blog' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/',
+                    'route'    => '/blog',
                     'defaults' => [
-                        'controller' => Controller\IndexController::class,
+                        'controller' => Controller\PostController::class,
                         'action'     => 'index',
                     ],
                 ],
-            ],
+            ], // ver a parte de rotas com zend
             'application' => [
                 'type'    => Segment::class,
                 'options' => [
@@ -34,6 +34,10 @@ return [
     'controllers' => [
         'factories' => [
             Controller\IndexController::class => InvokableFactory::class,
+            Controller\ComentarioController::class => InvokableFactory::class,
+            Controller\PostController::class => InvokableFactory::class,
+            Controller\PostTagController::class => InvokableFactory::class,
+            Controller\TagController::class => InvokableFactory::class,
         ],
     ],
     'view_manager' => [
