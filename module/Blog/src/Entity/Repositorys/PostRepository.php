@@ -8,7 +8,12 @@
 
 namespace Blog\Entity\Repositorys;
 
-class PostRepository {
+use Blog\Entity\Post;
 
+class PostRepository extends Post {
+
+    public function buscaTodosPost(){
+
+    }
 
 }

@@ -118,6 +118,14 @@ class Post {
         $this->dataCriacao = $dataCriacao;
     }
 
-
+    public function toArray(){
+        return [
+            'idPost' => $this->getIdPost(),
+            'titulo' => $this->getTitulo(),
+            'conteudo' => $this->getConteudo(),
+            'status' => $this->getDataCriacao(),
+            'dataCriacao' => $this->getDataCriacao(),
+        ];
+    }
 
 }
